@@ -11,6 +11,7 @@ inputs/
 lwtools/
 turbos/
 tfr9/
+hyper9/
 build-*
 go.work
 go.work.sum

@@ -5,12 +5,16 @@
 
 include conf.mk
 
-all: turbos.done
+all: turbos.done hyper9.done
 
 ############################################################################
 
 turbos.done: turbos.got tfr9.got lwtools.done
 	make -C turbos/ports/turbo9sim TURBOSDIR=$(SHELF)/turbos
+	date > $@
+
+hyper9.done: hyper9.got
+	xcodebuild -project hyper9/Hyper9.xcodeproj -scheme hyper9-cmd -configuration Release build
 	date > $@
 
 lwtools.done: lwtools.got
@@ -32,6 +36,10 @@ tfr9.got:
 	B=$(basename $@); set -x; test -d $$B || git clone $(TURBOBENCH_TFR9_REPO) $$B
 	date > $@
 
+hyper9.got:
+	B=$(basename $@); set -x; test -d $$B || git clone $(TURBOBENCH_HYPER9_REPO) $$B
+	date > $@
+
 ############################################################################
 
 inputs/$(TURBOBENCH_LWTOOLS_TARBALL):
@@ -44,6 +52,6 @@ inputs/$(TURBOBENCH_LWTOOLS_TARBALL):
 clean:
 	rm -rf *.got *.done
 	rm -rf bin share lib libexec usr include
-	rm -rf lwtools turbos tfr9
+	rm -rf lwtools turbos tfr9 hyper9
 
 _FORCE_:
