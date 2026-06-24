@@ -8,6 +8,7 @@ Clones and builds:
 - **[pico-sdk](https://github.com/raspberrypi/pico-sdk)** — Raspberry Pi Pico SDK for TFR9 firmware builds
 - **[lwtools](http://www.lwtools.ca/)** — 6809/6309 assembler toolchain
 - **[Hyper9](https://github.com/DrPitre/Hyper9)** — Turbo9 simulator (requires Swift)
+- **[FreeRTOS_Turbo9](https://github.com/DrPitre/FreeRTOS_Turbo9)** — FreeRTOS port for Turbo9, 6809, and CoCo
 
 ## Quick Start
 
@@ -39,7 +40,26 @@ echo "export PATH=\"$(pwd)/bin:\$PATH\"" >> ~/.bashrc && source ~/.bashrc
 | `lwtools.done` | lwtools assembler, installed to `bin/` |
 | `turbos.done` | Turbo9 simulator (`turbos/ports/turbo9sim`) |
 | `hyper9.done` | `hyper9-cmd` CLI, installed to `bin/` (requires Swift) |
+| `freertos-turbo9.got` | FreeRTOS_Turbo9 source clone |
+| `freertos-turbo9.done` | Turbo9 FreeRTOS CLANG demo image built with LLVM-6809 (requires `os9`, `lwtools`, Hyper9, and LLVM-6809) |
+| `freertos-coco-clang.done` | CoCo FreeRTOS CLANG demo disk image built with LLVM-6809 (requires `decb`, `lwtools`, and LLVM-6809) |
 | `pico-sdk.got` | Raspberry Pi Pico SDK, cloned with submodules and exported as `PICO_SDK_PATH` |
+
+Build the FreeRTOS Turbo9 demo explicitly with:
+
+```sh
+make freertos-turbo9.done
+```
+
+Build the FreeRTOS CoCo CLANG demo explicitly with:
+
+```sh
+make freertos-coco-clang.done
+```
+
+The `FreeRTOS/Demo/*_CLANG` builds default to `/Volumes/Lagniappe/llvm/llvm-mc6809/llvm/build`.
+Override `LLVM6809_ROOT`, `LLVM6809_BINDIR`, or `LLVM6809_RTDIR` if your toolchain
+is installed somewhere else.
 
 ## Cleaning Up
 

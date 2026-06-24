@@ -1,5 +1,6 @@
 *.got
 *.done
+*.clang-patched
 *.BAD
 bin/
 lib/
@@ -12,6 +13,7 @@ lwtools/
 turbos/
 tfr9/
 hyper9/
+FreeRTOS_Turbo9/
 pico-sdk/
 build-*
 go.work

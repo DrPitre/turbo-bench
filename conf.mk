@@ -6,6 +6,9 @@ export SHELF:=$S
 export SHELL:=/bin/bash
 export PATH:=$S/bin:$P
 export PICO_SDK_PATH:=$S/pico-sdk
+export LLVM6809_ROOT?=/Volumes/Lagniappe/llvm/llvm-mc6809/llvm/build
+export LLVM6809_BINDIR?=$(LLVM6809_ROOT)/bin
+export LLVM6809_RTDIR?=$(LLVM6809_ROOT)/lib/Target/MC6809/Runtime
 
 # Append ANON=1 to clone anonymously (no ssh key needed).
 ifdef ANON
@@ -20,6 +23,7 @@ endif
 TURBOBENCH_TURBOS_REPO:=$(REPO_PREFIX)boisy/turbos$(REPO_SUFFIX)
 TURBOBENCH_TFR9_REPO:=$(REPO_PREFIX)strickyak/tfr9$(REPO_SUFFIX)
 TURBOBENCH_HYPER9_REPO:=$(REPO_PREFIX)DrPitre/Hyper9$(REPO_SUFFIX)
+TURBOBENCH_FREERTOS_TURBO9_REPO:=$(REPO_PREFIX)DrPitre/FreeRTOS_Turbo9$(REPO_SUFFIX)
 TURBOBENCH_PICO_SDK_REPO:=$(REPO_PREFIX)raspberrypi/pico-sdk$(REPO_SUFFIX)
 
 # lwtools version
