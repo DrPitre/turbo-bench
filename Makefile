@@ -42,6 +42,10 @@ hyper9.got:
 	B=$(basename $@); set -x; test -d $$B || git clone $(TURBOBENCH_HYPER9_REPO) $$B
 	date > $@
 
+pico-sdk.got:
+	B=$(basename $@); set -x; test -d $$B || git clone --recurse-submodules $(TURBOBENCH_PICO_SDK_REPO) $$B
+	date > $@
+
 ############################################################################
 
 inputs/$(TURBOBENCH_LWTOOLS_TARBALL):
@@ -54,6 +58,6 @@ inputs/$(TURBOBENCH_LWTOOLS_TARBALL):
 clean:
 	rm -rf *.got *.done
 	rm -rf bin share lib libexec usr include
-	rm -rf lwtools turbos tfr9 hyper9
+	rm -rf lwtools turbos tfr9 hyper9 pico-sdk
 
 _FORCE_:

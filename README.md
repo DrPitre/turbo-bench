@@ -5,6 +5,7 @@ A focused build shelf for the Turbo9 processor ecosystem.
 Clones and builds:
 - **[turbos](https://github.com/boisy/turbos)** — Turbo9 simulator and OS port
 - **[tfr9](https://github.com/strickyak/tfr9)** — TFR9 hardware support
+- **[pico-sdk](https://github.com/raspberrypi/pico-sdk)** — Raspberry Pi Pico SDK for TFR9 firmware builds
 - **[lwtools](http://www.lwtools.ca/)** — 6809/6309 assembler toolchain
 - **[Hyper9](https://github.com/DrPitre/Hyper9)** — Turbo9 simulator (requires Swift)
 
@@ -38,6 +39,7 @@ echo "export PATH=\"$(pwd)/bin:\$PATH\"" >> ~/.bashrc && source ~/.bashrc
 | `lwtools.done` | lwtools assembler, installed to `bin/` |
 | `turbos.done` | Turbo9 simulator (`turbos/ports/turbo9sim`) |
 | `hyper9.done` | `hyper9-cmd` CLI, installed to `bin/` (requires Swift) |
+| `pico-sdk.got` | Raspberry Pi Pico SDK, cloned with submodules and exported as `PICO_SDK_PATH` |
 
 ## Cleaning Up
 

@@ -12,6 +12,7 @@ lwtools/
 turbos/
 tfr9/
 hyper9/
+pico-sdk/
 build-*
 go.work
 go.work.sum
